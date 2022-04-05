@@ -31,7 +31,7 @@ object Exercises extends App{
     Record('d', 1),
   )
 
-  val ans2 = input2.groupBy(r => r.id).map { case (c, xs) => c -> xs.map(r => Record(r.id, r.value * 2)) }
+  val ans2 = input2.groupBy(_.id).map { case (c, xs) => c -> xs.map(r => Record(r.id, r.value * 2)) }
   //println(ans2)
 
   // 3. Given a list of records collect the charaters into a string and sum the values
@@ -50,9 +50,11 @@ object Exercises extends App{
     Record('d', 8),
   )
 
-  val ans3A = input3.foldLeft("")((a, r) => a + r.id)
-  val ans3B = input3.foldLeft(0)((a, r) => a + r.value)
+  //val ans3A = input3.foldLeft("")((a, r) => a + r.id)
+  //val ans3B = input3.foldLeft(0)((a, r) => a + r.value)
+  val ans3 = input3.foldLeft(("", 0))((a, r) => (a._1 + r.id, a._2 + r.value))
   //println(s"$ans3A, $ans3B")
+  //println(ans3)
 
   // 4. Given a list of records return all records with values higher than 9
 
