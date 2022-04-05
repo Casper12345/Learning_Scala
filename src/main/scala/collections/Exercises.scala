@@ -13,9 +13,10 @@ object Exercises extends App{
     Record('a', 9),
   )
 
-  val ans1 = input.sortWith( _.id < _.id ).foldLeft(0)((i, r) => i + r.value)
-  //println(ans1)
-
+  val ans1A = input.sortWith( _.id < _.id )
+  val ans1B = ans1A.foldLeft(0)((a, r) => a + r.value)
+  //println(ans1A)
+  //println(ans1B)
 
   // 2. Given a list of records group them by id and multiply the grouped values by a factor 2
   val input2 = List(
