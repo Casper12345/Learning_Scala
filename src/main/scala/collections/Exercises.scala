@@ -60,4 +60,22 @@ object Exercises {
 
   // 5. Given the same list of records return all records with values higher than 8 and where charater is a
 
+  // 6. Given two list of records return one list contain a tuple with a string and the sum of values eg output: List(("hello world", sum))
+
+  val input5 = List(
+    Record('h', 2),
+    Record('e', 1),
+    Record('l', 2),
+    Record('l', 10),
+    Record('o', 9),
+  )
+
+  val input6 = List(
+    Record('w', 90),
+    Record('o', 12),
+    Record('r', 3),
+    Record('l', 1),
+    Record('d', 8),
+  )
+
 }
