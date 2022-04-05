@@ -13,6 +13,8 @@ object Exercises {
     Record('a', 9),
   )
 
+  val ans1 = input.sortWith()
+
 
   // 2. Given a list of records group them by id and multiply the grouped values by a factor 2
   val input2 = List(
