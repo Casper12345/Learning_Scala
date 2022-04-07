@@ -13,7 +13,10 @@ object Exercises extends App{
     Record('a', 9),
   )
 
-  val ans1 = input.sortWith( _.id < _.id ).foldLeft(0)((i, r) => i + r.value)
+  val ans1: Int = input.sortWith( _.id < _.id ).foldLeft(0)((i, r) => i + r.value)
+
+  val egAns1 = (input.sortWith(_.id < _.id), input.map(_.value).sum)
+
   //println(ans1)
 
 
@@ -31,6 +34,7 @@ object Exercises extends App{
   )
 
   val ans2 = input2.groupBy(r => r.id).map { case (c, xs) => c -> xs.map(r => Record(r.id, r.value * 2)) }
+
   //println(ans2)
 
   // 3. Given a list of records collect the charaters into a string and sum the values
@@ -94,6 +98,6 @@ object Exercises extends App{
   )
 
   val ans6 = (input5 ++ input6).foldLeft(List(("", 0)))((a, r) => List((a.head._1 + r.id, a.head._2 + r.value)))
-  //println(ans6)
+//  println(ans6)
 
 }

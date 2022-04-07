@@ -36,3 +36,31 @@ class MyClass {
 
 
 }
+object Partial extends App {
+
+  val mmm = List(1,2,3,4).map {
+    case x if x < 2 => x
+    case x => 0 // will not run without a default statement
+  }
+  println(mmm)
+
+  val hhhh = new PartialFunction[Int, Int] {
+    override def isDefinedAt(x: Int): Boolean = x == 2
+
+    override def apply(v1: Int): Int = 100
+  }
+
+  val hhhh2 = new PartialFunction[Int, Int] {
+    override def isDefinedAt(x: Int): Boolean = x < 2
+
+    override def apply(v1: Int): Int = v1
+  }
+
+
+  val hhh = List(1,2,3,5).collect {
+    hhhh.orElse(hhhh2)
+  }
+
+  println(hhh)
+
+}
